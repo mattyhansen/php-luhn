@@ -15,11 +15,7 @@ class Luhn {
     static public function checksum($number) {
         $numbers = new Map(str_split(strrev($number)));
         $sum     = $numbers->reduce(0, function($sum, $value, $key) {
-            if ($key % 2) {
-                return $sum + self::$_map[$value];
-            } else {
-                return $sum + $value;
-            }
+            return $sum + (($key % 2) ? self::$_map[$value] : $value);
         });
         return $sum % 10;
     }
