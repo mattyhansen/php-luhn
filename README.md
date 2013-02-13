@@ -1,6 +1,8 @@
 Luhn
 ====
 
+[![Build Status](https://travis-ci.org/JosephMoniz/php-luhn.png?branch=master)](https://travis-ci.org/JosephMoniz/php-luhn)
+
 An implementation of the Luhn algorithm for verifying the checksum of credit
 card numbers.
 
