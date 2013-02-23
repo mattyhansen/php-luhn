@@ -17,3 +17,36 @@ if (Luhn::validate("4012888888881881")) {
     echo "invalid\n";
 }
 ```
+
+Public Interface
+----------------
+```php
+namespace PlasmaConduit;
+
+class Luhn {
+
+    /**
+     * Takes a number and calculates the Luhn checksum of it
+     *
+     * @param {Int} $number - The number to calculate the checksum for
+     * @return {Int}        - The computed checksum
+     */
+    static public function checksum($number);
+
+    /**
+     * Given an incomplete Luhn this calculates the check digit
+     *
+     * @param {Int} $number - The incomplete number to derive the check digit
+     * @return {Int}        - The derived check digit
+     */
+    static public function getCheckDigit($number);
+
+    /**
+     * Given a complete Luhn this function returns true if it's valid
+     *
+     * @param {Int} $number - The Luhn to validate
+     * @return {Boolean}    - True on valid false otherwise
+     */
+    static public function validate($number);
+}
+```
